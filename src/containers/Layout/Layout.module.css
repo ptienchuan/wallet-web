@@ -1,0 +1,23 @@
+.Layout {
+	color: #959CB6;
+}
+
+.Layout .side {
+	position: fixed;
+	height: 100%;
+	width: 25%;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	background-color: #27293D;
+}
+
+.Layout .main {
+	width: 75%;
+	margin-left: 25%;
+	box-sizing: border-box;
+}
+
+.Layout main {
+	padding: 20px;
+}

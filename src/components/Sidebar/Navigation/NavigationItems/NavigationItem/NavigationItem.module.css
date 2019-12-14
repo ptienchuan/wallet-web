@@ -1,0 +1,19 @@
+.NavigationItem {
+	display: block;
+	border-bottom: 1px solid #313452;
+	margin: 0px 15px;
+	padding: 10px 10px 17px;
+	color: inherit;
+	text-decoration: none;
+}
+
+.NavigationItem:first-child {
+	border-top: 1px solid #313452;
+}
+
+.NavigationItem:active,
+.NavigationItem.active,
+.NavigationItem:hover {
+	background-color: #1E1E2F;
+	color: #DFE4FA;
+}

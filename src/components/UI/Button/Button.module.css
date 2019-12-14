@@ -1,0 +1,31 @@
+.Button {
+	background-color: #27293D;
+	color: #959CB6;
+	padding: 7px 15px;
+	border: 1px solid #1638c1;
+	border-radius: 5px;
+	outline: none;
+	cursor: pointer;
+}
+.Button:hover {
+	background-color: #1E1E2F;
+	color: #d3d9ee;
+}
+
+.danger {
+	border: 1px solid #cb2431;
+	background-color: #8f0a14;
+}
+.danger:hover {
+	background-color: #cb2431;
+	color: #d3d9ee;
+}
+
+.success {
+	border: 1px solid #188130;
+	background-color: #0e6422;
+}
+.success:hover {
+	background-color: #188130;
+	color: #d3d9ee;
+}
