@@ -27,6 +27,7 @@ export default [
 				name: 'Đóng tiền nước',
 				cost: 150000,
 				spended: false,
+				note: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.'
 			},
 			{
 				_id: '15',

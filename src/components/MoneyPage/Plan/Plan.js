@@ -7,7 +7,7 @@ const plan = ( props ) => {
 	return (
 		<div className={classes.Plan}>
 			<p className={classes.title}>{props.title}</p>
-			<div>
+			<div className={classes.money}>
 				<PlanItems list={props.list}/>
 			</div>
 		</div>

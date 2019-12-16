@@ -1,6 +1,8 @@
 import React from 'react'
 import numeral from 'numeral'
+
 import Plan from '../Plan/Plan'
+import CircleIconButton from '../../UI/CircleIconButton/CircleIconButton'
 
 import classes from './Compartment.module.css'
 
@@ -19,11 +21,10 @@ const compartment = ( props ) => {
 	return (
 		<div className={classes.Compartment}>
 			<div className={classes.header}>
-				<h3>
-					{props.name}
-				</h3>
-				<div className="controls">
-
+				<h3>{props.name}</h3>
+				<div className={classes.controls}>
+					<CircleIconButton icon='card' type='success' tooltip='Nạp tiền' />
+					<CircleIconButton icon='close' type='danger' tooltip='Xóa' />
 				</div>
 			</div>
 			<div className={classes.buget}>
