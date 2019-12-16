@@ -16,3 +16,13 @@ code {
 p {
 	margin: 5px 0px;
 }
+
+h3,h4 {
+	font-weight: normal;
+	margin: 0;
+}
+
+ul {
+	padding-left: 20px;
+	margin: 0;
+}

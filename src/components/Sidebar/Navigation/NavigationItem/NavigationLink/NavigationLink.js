@@ -1,9 +1,9 @@
 import React from 'react'
 
-import classes from './NavigationItem.module.css'
+import classes from './NavigationLink.module.css'
 
-const navigationItem = ( props ) => {
-	const usingClass = [classes.NavigationItem]
+const navigationLink = ( props ) => {
+	const usingClass = [classes.NavigationLink]
 	if (props.active) {
 		usingClass.push(classes.active)
 	}
@@ -14,4 +14,4 @@ const navigationItem = ( props ) => {
 	)
 }
 
-export default navigationItem
+export default navigationLink

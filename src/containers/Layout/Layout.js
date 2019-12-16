@@ -4,8 +4,8 @@ import Toolbar from '../../components/Toolbar/Toolbar'
 
 import classes from './Layout.module.css'
 import avatar from '../../assets/img/avatar.jpg'
-import dummyCompartments from '../../assets/dummyCompartments'
-dummyCompartments[0].active = true;
+import dummyWallets from '../../assets/dummyWallets'
+dummyWallets[0].active = true;
 
 const Layout = ( props ) => {
 	const [ user ] = useState({
@@ -14,12 +14,12 @@ const Layout = ( props ) => {
 		avatar: avatar,
 	})
 
-	const [ compartments ] = useState(dummyCompartments)
+	const [ wallets ] = useState(dummyWallets)
 
 	return (
 		<div className={classes.Layout}>
 			<div className={classes.side}>
-				<Sidebar user={user} compartments={compartments}/>
+				<Sidebar user={user} wallets={wallets}/>
 			</div>
 			<div className={classes.main}>
 				<Toolbar />

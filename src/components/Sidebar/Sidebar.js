@@ -9,7 +9,7 @@ const sidebar = ( props ) => {
 		<div className={classes.Sidebar}>
 			<div>LOGO</div>
 			<User user={props.user} />
-			<Navigation compartments={props.compartments}/>
+			<Navigation wallets={props.wallets}/>
 		</div>
 	)
 }

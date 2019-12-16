@@ -1,0 +1,32 @@
+.NavigationLink {
+	display: block;
+	border-bottom: 1px solid #313452;
+	margin: 0px 15px;
+	padding: 10px 10px 17px;
+	color: inherit;
+	text-decoration: none;
+}
+
+.NavigationLink:first-child {
+	border-top: 1px solid #313452;
+}
+
+.NavigationLink:active,
+.NavigationLink.active,
+.NavigationLink:hover {
+	position: relative;
+	background-color: #1E1E2F;
+	color: #DFE4FA;
+}
+
+.NavigationLink:active::after,
+.NavigationLink.active::after,
+.NavigationLink:hover::after {
+	content: '';
+	background-color: #696b73;
+	position: absolute;
+	height: calc(100% - 2px);
+	width: 3px;
+	right: 0;
+	top: 0;
+}

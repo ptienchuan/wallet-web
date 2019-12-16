@@ -1,5 +1,5 @@
 import React from 'react'
-import NavigationItems from './NavigationItems/NavigationItems'
+import NavigationItem from './NavigationItem/NavigationItem'
 
 import classes from './Navigation.module.css'
 
@@ -11,8 +11,8 @@ const navigation = ( props ) => {
 
 	return (
 		<nav className={classes.Navigation}>
-			<NavigationItems title="compartments" list={props.compartments} />
-			<NavigationItems title="settings" list={settingList} />
+			<NavigationItem title="wallets" list={props.wallets} />
+			<NavigationItem title="settings" list={settingList} />
 		</nav>
 	)
 }

@@ -22,10 +22,11 @@
 }
 
 .success {
-	border: 1px solid #188130;
-	background-color: #0e6422;
+	border: 1px solid #21983c;
+	background-color: #0e8129;
+	color: #d3d9ee;
 }
 .success:hover {
-	background-color: #188130;
-	color: #d3d9ee;
+	background-color: #21983c;
+	color: #ebeffc;
 }
