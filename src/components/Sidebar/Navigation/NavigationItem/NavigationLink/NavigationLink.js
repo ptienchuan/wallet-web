@@ -1,17 +1,24 @@
-import React from 'react'
+import React, { useContext } from "react";
 
-import classes from './NavigationLink.module.css'
+import WalletContext from "../../../../../contexts/WalletContext";
+import classes from "./NavigationLink.module.css";
 
-const navigationLink = ( props ) => {
-	const usingClass = [classes.NavigationLink]
+const NavigationLink = props => {
+	const walletContext = useContext(WalletContext);
+
+	const usingClass = [classes.NavigationLink];
 	if (props.active) {
-		usingClass.push(classes.active)
+		usingClass.push(classes.active);
 	}
 	return (
-		<a href={props.link} className={usingClass.join(' ')}>
+		<a
+			href={props.link}
+			className={usingClass.join(" ")}
+			onClick={() => walletContext.activeWallet(props._id)}
+		>
 			{props.children}
 		</a>
-	)
-}
+	);
+};
 
-export default navigationLink
+export default NavigationLink;

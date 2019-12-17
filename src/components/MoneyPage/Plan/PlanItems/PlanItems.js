@@ -1,12 +1,18 @@
-import React from 'react'
-import Money from '../Money/Money'
+import React from "react";
+import Money from "../Money/Money";
 
-const planItems = ( props ) => {
+const planItems = props => {
 	return (
 		<>
-			{props.list.map(item => <Money key={item._id} {...item} type={item.spended ? 'danger' : 'success'} />)}
+			{props.list.map(item => (
+				<Money
+					key={item._id}
+					{...item}
+					type={item.spended ? "danger" : "success"}
+				/>
+			))}
 		</>
-	)
-}
+	);
+};
 
-export default planItems
+export default planItems;

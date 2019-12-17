@@ -1,17 +1,25 @@
-import React from 'react'
-import PlanItems from './PlanItems/PlanItems'
+import React from "react";
+import PlanItems from "./PlanItems/PlanItems";
+import CircleIconButton from "../../UI/CircleIconButton/CircleIconButton";
 
-import classes from './Plan.module.css'
+import classes from "./Plan.module.css";
 
-const plan = ( props ) => {
+const plan = props => {
 	return (
 		<div className={classes.Plan}>
-			<p className={classes.title}>{props.title}</p>
+			<div className={classes.header}>
+				<p className={classes.title}>{props.title}</p>
+				<CircleIconButton
+					icon="add"
+					type="success"
+					style={{ width: "15px", height: "15px" }}
+				/>
+			</div>
 			<div className={classes.money}>
-				<PlanItems list={props.list}/>
+				<PlanItems list={props.list} />
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default plan
+export default plan;

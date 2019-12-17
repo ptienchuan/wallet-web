@@ -1,34 +1,47 @@
-import React, { useState } from 'react'
-import Sidebar from '../../components/Sidebar/Sidebar'
-import Toolbar from '../../components/Toolbar/Toolbar'
+import React, { useState } from "react";
+import Sidebar from "../../components/Sidebar/Sidebar";
+import Toolbar from "../../components/Toolbar/Toolbar";
 
-import classes from './Layout.module.css'
-import avatar from '../../assets/img/avatar.jpg'
-import dummyWallets from '../../assets/dummyWallets'
+import WalletContext from "../../contexts/WalletContext";
+import classes from "./Layout.module.css";
+
+import dummyWallets from "../../assets/dummyWallets";
 dummyWallets[0].active = true;
 
-const Layout = ( props ) => {
-	const [ user ] = useState({
-		email: 'ptienchuan@gmail.com',
-		name: 'Chuan Pham',
-		avatar: avatar,
-	})
+const Layout = props => {
+	const [wallets, setWallets] = useState(dummyWallets);
 
-	const [ wallets ] = useState(dummyWallets)
+	const activeWallet = id => {
+		const newWallets = wallets.map(wallet => {
+			if (wallet._id === id) {
+				wallet.active = true;
+			} else {
+				wallet.active = false;
+			}
+			return wallet;
+		});
+		setWallets(newWallets);
+		props.onchangeWallet(id);
+	};
 
 	return (
-		<div className={classes.Layout}>
-			<div className={classes.side}>
-				<Sidebar user={user} wallets={wallets}/>
+		<WalletContext.Provider
+			value={{
+				wallets,
+				activeWallet
+			}}
+		>
+			<div className={classes.Layout}>
+				<div className={classes.side}>
+					<Sidebar user={props.user} wallets={wallets} />
+				</div>
+				<div className={classes.main}>
+					<Toolbar />
+					<main>{props.children}</main>
+				</div>
 			</div>
-			<div className={classes.main}>
-				<Toolbar />
-				<main>
-					{props.children}
-				</main>
-			</div>
-		</div>
-	)
-}
+		</WalletContext.Provider>
+	);
+};
 
-export default Layout
+export default Layout;
