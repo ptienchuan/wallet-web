@@ -17,12 +17,18 @@ const MoneyPage = props => {
 		setCompartments(dummyCompartments[props.walletId]);
 	}, [props.walletId]);
 
+	/**
+	 * TODO: Thiet ke API cho phep update [compartments] state
+	 */
+
 	return (
-		<div className={classes.MoneyPage}>
-			{compartments.map(compartment => (
-				<Compartment key={compartment._id} {...compartment} />
-			))}
-		</div>
+		<CompartmentContext.Provider>
+			<div className={classes.MoneyPage}>
+				{compartments.map(compartment => (
+					<Compartment key={compartment._id} {...compartment} />
+				))}
+			</div>
+		</CompartmentContext.Provider>
 	);
 };
 

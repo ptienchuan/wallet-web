@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Toolbar from "../../components/Toolbar/Toolbar";
+import MoneyFormModal from "../../components/MoneyPage/CompartmentFormModal/CompartmentFormModal";
 
 import WalletContext from "../../contexts/WalletContext";
 import classes from "./Layout.module.css";
@@ -32,6 +33,7 @@ const Layout = props => {
 			}}
 		>
 			<div className={classes.Layout}>
+				<MoneyFormModal />
 				<div className={classes.side}>
 					<Sidebar user={props.user} wallets={wallets} />
 				</div>

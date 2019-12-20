@@ -1,0 +1,19 @@
+.Modal {
+	position: fixed;
+	z-index: 600;
+	width: 30%;
+	height: 100%;
+	top: 0;
+	left: 35%;
+	display: flex;
+	align-items: center;
+}
+
+.Modal .inner {
+	width: 100%;
+	max-height: 60%;
+	overflow: hidden;
+	background-color: #323644;
+	border: 1px solid #16191E;
+	color: #959CB6;
+}

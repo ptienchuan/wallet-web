@@ -1,0 +1,11 @@
+.InputContainer {
+	margin-top: 15px;
+}
+
+.InputContainer:first-child {
+	margin-top: 0;
+}
+
+.center {
+	text-align: center;
+}

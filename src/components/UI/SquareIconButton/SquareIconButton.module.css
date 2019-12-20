@@ -1,0 +1,55 @@
+.CircleIconButton {
+	width: 18px;
+	height: 18px;
+	padding: 3px;
+	border: 2px solid #518713;
+	border-radius: 5px;
+	cursor: pointer;
+	margin-left: 7px;
+}
+
+.CircleIconButton:first-child {
+	margin-left: 0px;
+}
+
+.CircleIconButton:hover {
+	color: #DFE4FA;
+}
+
+.success {
+	border-color: #518713;
+	color: #518713;
+}
+
+.success:hover {
+	background-color: #518713;
+	color: #DFE4FA;
+}
+
+.warning {
+	border-color: #a7810c;
+	color: #a7810c;
+}
+
+.warning:hover {
+	background-color: #a7810c;
+	color: #DFE4FA;
+}
+
+.danger {
+	border-color: #a42b2b;
+	color: #a42b2b;
+}
+
+.danger:hover {
+	background-color: #a42b2b;
+	color: #DFE4FA;
+}
+
+.dark {
+	border-color: #23262F;
+}
+
+.dark:hover {
+	background-color: #23262F;
+}
