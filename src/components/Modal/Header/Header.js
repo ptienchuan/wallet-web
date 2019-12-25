@@ -4,11 +4,15 @@ import SquareIconButton from "../../../components/UI/SquareIconButton/SquareIcon
 import classes from "./Header.module.css";
 
 const header = props => {
-	const { title = "Modal", onClose = () => {} } = props;
+	const { title = "Modal", onClickButton = () => {} } = props;
 	return (
 		<div className={classes.Header}>
 			<h3>{title}</h3>
-			<SquareIconButton icon="close" type="dark" onClick={onClose} />
+			<SquareIconButton
+				icon="close"
+				type="dark"
+				onClick={onClickButton}
+			/>
 		</div>
 	);
 };

@@ -1,19 +1,13 @@
 .Plan {
-	margin: 15px 0px;
-	padding: 0 15px;
+	padding: 15px;
 }
 
-.header {
-	display: flex;
-	justify-content: space-between;
-}
-
-.title {
+.Plan .title {
 	text-transform: uppercase;
 	font-size: 11px;
 }
 
-.money {
+.Plan .money {
 	margin-top: 10px;
 	margin-left: 10px;
 }

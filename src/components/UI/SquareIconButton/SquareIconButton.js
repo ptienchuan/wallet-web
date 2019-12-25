@@ -1,40 +1,25 @@
 import React from "react";
-import {
-	IoMdCheckmark,
-	IoMdClose,
-	IoIosCard,
-	IoMdRemove,
-	IoMdAdd
-} from "react-icons/io";
+import { IoMdClose, IoIosMore } from "react-icons/io";
 
 import classes from "./SquareIconButton.module.css";
 
-const circleIconButton = props => {
+const SquareIconButton = props => {
 	let Main = null;
 	switch (props.icon) {
-		case "check":
-			Main = IoMdCheckmark;
-			break;
 		case "close":
 			Main = IoMdClose;
 			break;
-		case "reverse":
-			Main = IoMdRemove;
-			break;
-		case "card":
-			Main = IoIosCard;
-			break;
-		case "add":
-			Main = IoMdAdd;
+		case "more":
+			Main = IoIosMore;
 			break;
 		default:
-			Main = IoMdCheckmark;
+			Main = IoMdClose;
 			break;
 	}
 
 	return (
 		<Main
-			className={[classes.CircleIconButton, classes[props.type]].join(
+			className={[classes.SquareIconButton, classes[props.type]].join(
 				" "
 			)}
 			style={props.style}
@@ -44,4 +29,4 @@ const circleIconButton = props => {
 	);
 };
 
-export default circleIconButton;
+export default SquareIconButton;

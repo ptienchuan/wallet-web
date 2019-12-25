@@ -7,36 +7,41 @@
 	cursor: pointer;
 	margin-left: 7px;
 }
+
 .CircleIconButton:first-child {
 	margin-left: 0px;
 }
+
 .CircleIconButton:hover {
-	color: #DFE4FA;
+	color: #DFE4FA !important;
 }
 
 .success {
 	border-color: #518713;
 	color: #518713;
 }
+
 .success:hover {
-	background-color: #518713;
-	color: #DFE4FA;
+	background-color: #518713 !important;
+	color: #DFE4FA !important;
 }
 
 .warning {
 	border-color: #a7810c;
 	color: #a7810c;
 }
+
 .warning:hover {
-	background-color: #a7810c;
-	color: #DFE4FA;
+	background-color: #a7810c !important;
+	color: #DFE4FA !important;
 }
 
 .danger {
 	border-color: #a42b2b;
 	color: #a42b2b;
 }
+
 .danger:hover {
-	background-color: #a42b2b;
-	color: #DFE4FA;
+	background-color: #a42b2b !important;
+	color: #DFE4FA !important;
 }

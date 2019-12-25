@@ -11,14 +11,18 @@ const dummyUser = {
 
 function App() {
 	const [user] = useState(dummyUser);
-	const [walletId, setWalletId] = useState("1");
+	const [walletId, setWalletId] = useState(null);
 
 	const onchangeWalletHandler = walletId => {
 		setWalletId(walletId);
 	};
 
 	return (
-		<Layout user={user} onchangeWallet={onchangeWalletHandler}>
+		<Layout
+			user={user}
+			onchangeWallet={onchangeWalletHandler}
+			walletId={walletId}
+		>
 			<MoneyPage walletId={walletId} />
 		</Layout>
 	);

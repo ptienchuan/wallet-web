@@ -4,12 +4,13 @@ import {
 	IoMdClose,
 	IoIosCard,
 	IoMdRemove,
-	IoMdAdd
+	IoMdAdd,
+	IoMdCreate
 } from "react-icons/io";
 
 import classes from "./CircleIconButton.module.css";
 
-const circleIconButton = props => {
+const CircleIconButton = props => {
 	let Main = null;
 	switch (props.icon) {
 		case "check":
@@ -27,6 +28,9 @@ const circleIconButton = props => {
 		case "add":
 			Main = IoMdAdd;
 			break;
+		case "edit":
+			Main = IoMdCreate;
+			break;
 		default:
 			Main = IoMdCheckmark;
 			break;
@@ -39,9 +43,9 @@ const circleIconButton = props => {
 			)}
 			style={props.style}
 			title={props.tooltip}
-			onClick={props.clicked}
+			onClick={props.onClick}
 		/>
 	);
 };
 
-export default circleIconButton;
+export default CircleIconButton;

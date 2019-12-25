@@ -2,7 +2,8 @@ import { createContext } from "react";
 
 const walletContext = createContext({
 	wallets: [],
-	activeWallet: () => {}
+	activeWallet: () => {},
+	addWallet: () => {}
 });
 
 export default walletContext;

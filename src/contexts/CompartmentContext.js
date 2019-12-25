@@ -1,7 +1,13 @@
 import { createContext } from "react";
 
-const compartmentContext = createContext({
-	compartments: []
+const CompartmentContext = createContext({
+	addCompartment: () => {},
+	changeCompartment: () => {},
+	chargeBudget: () => {},
+	removeCompartment: () => {},
+	addMoney: () => {},
+	changeMoney: () => {},
+	removeMoney: () => {}
 });
 
-export default compartmentContext;
+export default CompartmentContext;

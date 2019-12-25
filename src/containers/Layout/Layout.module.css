@@ -10,6 +10,7 @@
 	left: 0;
 	box-sizing: border-box;
 	background-color: #27293D;
+	z-index: 100;
 }
 
 .Layout .main {

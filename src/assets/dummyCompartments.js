@@ -3,7 +3,7 @@ export default {
 		{
 			_id: "1",
 			name: "Chi phí sinh hoạt",
-			buget: 9000000,
+			budget: 9000000,
 			plans: [
 				{
 					_id: "11",
@@ -48,7 +48,7 @@ export default {
 		{
 			_id: "2",
 			name: "Chi phí cá nhân",
-			buget: 1000000,
+			budget: 1000000,
 			plans: [
 				{
 					_id: "21",
@@ -61,7 +61,7 @@ export default {
 		{
 			_id: "3",
 			name: "Đầu tư học",
-			buget: 500000,
+			budget: 500000,
 			plans: [
 				{
 					_id: "31",
@@ -74,10 +74,8 @@ export default {
 		{
 			_id: "4",
 			name: "Tiết kiệm",
-			buget: 4500000,
+			budget: 4500000,
 			plans: []
 		}
-	],
-	2: [],
-	3: []
+	]
 };

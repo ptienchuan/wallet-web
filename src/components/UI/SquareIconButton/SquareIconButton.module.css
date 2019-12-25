@@ -1,4 +1,4 @@
-.CircleIconButton {
+.SquareIconButton {
 	width: 18px;
 	height: 18px;
 	padding: 3px;
@@ -8,11 +8,11 @@
 	margin-left: 7px;
 }
 
-.CircleIconButton:first-child {
+.SquareIconButton:first-child {
 	margin-left: 0px;
 }
 
-.CircleIconButton:hover {
+.SquareIconButton:hover {
 	color: #DFE4FA;
 }
 
@@ -51,5 +51,13 @@
 }
 
 .dark:hover {
+	background-color: #23262F;
+}
+
+.transparent {
+	border-color: #313452;
+}
+
+.transparent:hover {
 	background-color: #23262F;
 }

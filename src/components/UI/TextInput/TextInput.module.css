@@ -13,3 +13,7 @@
 	border-color: #9195cc;
 	outline: none;
 }
+
+.TextInput:disabled {
+	background-color: #373b51;
+}

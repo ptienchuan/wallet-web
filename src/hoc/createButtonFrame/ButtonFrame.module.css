@@ -1,0 +1,20 @@
+.ButtonFrame {
+	display: inline-block;
+	position: relative;
+}
+
+.ButtonFrame .frame {
+	display: none;
+	position: absolute;
+	right: calc(100% + 5px);
+	top: 0;
+	z-index: 1;
+}
+
+.ButtonFrame .frame.show {
+	display: block;
+}
+
+.ButtonFrame .frame svg {
+	background-color: #27293D;
+}

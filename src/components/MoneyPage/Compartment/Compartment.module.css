@@ -1,7 +1,7 @@
 .Compartment {
 	background-color: #27293D;
-	width: calc( (100% - 50px) / 3 );
-	margin-bottom: 25px;
+	width: calc((100% - 60px) / 3);
+	margin: 10px;
 }
 
 .Compartment .header {
@@ -11,7 +11,7 @@
 	padding: 15px;
 }
 
-.Compartment .header h3{
+.Compartment .header h3 {
 	flex: 2;
 }
 
@@ -20,14 +20,14 @@
 	text-align: right;
 }
 
-.Compartment .buget {
+.Compartment .budget {
 	position: relative;
 	padding: 0px 15px 20px;
 }
 
-.Compartment .buget::after {
+.Compartment .budget::after {
 	content: '';
-	width: calc( 100% - 30px );
+	width: calc(100% - 30px);
 	height: 2px;
 	position: absolute;
 	left: 15px;
@@ -35,7 +35,7 @@
 	background-color: #313452;
 }
 
-.Compartment .buget p{
+.Compartment .budget p {
 	font-size: 35px;
 	text-align: center;
 	margin-top: 0px;

@@ -1,7 +1,7 @@
 import React from "react";
 import Money from "../Money/Money";
 
-const planItems = props => {
+const PlanItems = props => {
 	return (
 		<>
 			{props.list.map(item => (
@@ -15,4 +15,4 @@ const planItems = props => {
 	);
 };
 
-export default planItems;
+export default PlanItems;
