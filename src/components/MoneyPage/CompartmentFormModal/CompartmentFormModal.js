@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react";
+import numeral from "numeral";
 
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
@@ -61,10 +62,14 @@ const CompartmentFormModal = props => {
 					<InputContainer>
 						<InputLabel htmlFor="budget">Budget</InputLabel>
 						<TextInput
-							type="number"
+							type={compartment._id ? "text" : "number"}
 							id="budget"
 							name="budget"
-							value={compartment.budget}
+							value={
+								compartment._id
+									? numeral(compartment.budget).format("0,0")
+									: compartment.budget
+							}
 							onChange={_changeInputHandler}
 							disabled={compartment._id ? true : false}
 						/>

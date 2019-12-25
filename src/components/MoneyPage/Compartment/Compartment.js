@@ -9,12 +9,16 @@ import CircleIconButton from "../../UI/CircleIconButton/CircleIconButton";
 import SquareIconButton from "../../UI/SquareIconButton/SquareIconButton";
 import createButtonFrame from "../../../hoc/createButtonFrame/createButtonFrame";
 
+import { calculateBudget } from "../../../utils/Compartment";
+
 import classes from "./Compartment.module.css";
 
 const Compartment = props => {
-	const [showingBudgetForm, setShowingBudgetForm] = useState(false);
-	const [showingMoneyForm, setShowingMoneyForm] = useState(false);
-	const [showingCompartmentForm, setShowingCompartmentForm] = useState(false);
+	const [showingBudgetForm, _setShowingBudgetForm] = useState(false);
+	const [showingMoneyForm, _setShowingMoneyForm] = useState(false);
+	const [showingCompartmentForm, _setShowingCompartmentForm] = useState(
+		false
+	);
 
 	const propMoney = [...props.money];
 	const [money, spended] = propMoney.reduce(
@@ -29,6 +33,14 @@ const Compartment = props => {
 		[[], []]
 	);
 
+	const getBudget = () => {
+		const calcBudget = calculateBudget({
+			budget: props.budget,
+			money: propMoney
+		});
+		return calcBudget;
+	};
+
 	const ButtonFrame = createButtonFrame(
 		<SquareIconButton
 			icon="more"
@@ -40,19 +52,19 @@ const Compartment = props => {
 				icon="add"
 				type="success"
 				tooltip="Thêm khoản tiền"
-				onClick={() => setShowingMoneyForm(true)}
+				onClick={() => _setShowingMoneyForm(true)}
 			/>
 			<CircleIconButton
 				icon="card"
 				type="success"
 				tooltip="Nạp tiền"
-				onClick={() => setShowingBudgetForm(true)}
+				onClick={() => _setShowingBudgetForm(true)}
 			/>
 			<CircleIconButton
 				icon="edit"
 				type="warning"
 				tooltip="Sửa"
-				onClick={() => setShowingCompartmentForm(true)}
+				onClick={() => _setShowingCompartmentForm(true)}
 			/>
 			<CircleIconButton
 				icon="close"
@@ -67,17 +79,17 @@ const Compartment = props => {
 		<>
 			{!showingBudgetForm ? null : (
 				<ChargingBudgetFormModal
-					onClose={() => setShowingBudgetForm(false)}
+					onClose={() => _setShowingBudgetForm(false)}
 					compartment={{
 						_id: props._id,
 						name: props.name,
-						budget: props.budget
+						budget: getBudget()
 					}}
 				/>
 			)}
 			{!showingMoneyForm ? null : (
 				<MoneyFormModal
-					onClose={() => setShowingMoneyForm(false)}
+					onClose={() => _setShowingMoneyForm(false)}
 					compartment={{ _id: props._id }}
 				/>
 			)}
@@ -86,9 +98,9 @@ const Compartment = props => {
 					compartment={{
 						_id: props._id,
 						name: props.name,
-						budget: props.budget
+						budget: getBudget()
 					}}
-					onClose={() => setShowingCompartmentForm(false)}
+					onClose={() => _setShowingCompartmentForm(false)}
 				/>
 			)}
 			<div className={classes.Compartment}>
@@ -99,7 +111,7 @@ const Compartment = props => {
 					</div>
 				</div>
 				<div className={classes.budget}>
-					<p>{numeral(props.budget).format("0,0")}</p>
+					<p>{numeral(getBudget()).format("0,0")}</p>
 				</div>
 				<Plan title="plans" list={money} />
 				<Plan title="spended" list={spended} />
