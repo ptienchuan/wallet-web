@@ -28,6 +28,7 @@ ul {
 	margin: 0;
 }
 
-input {
+input,
+textarea {
 	box-sizing: border-box;
 }

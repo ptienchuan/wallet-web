@@ -4,13 +4,11 @@ import numeral from "numeral";
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
 import Body from "../../Modal/Body/Body";
-import InputContainer from "../../UI/InputContainer/InputContainer";
 
 import CompartmentContext from "../../../contexts/CompartmentContext";
 
 import Button from "../../UI/Button/Button";
-import TextInput from "../../UI/TextInput/TextInput";
-import InputLabel from "../../UI/InputLabel/InputLabel";
+import Input from "../../UI/Input/Input";
 
 const CompartmentFormModal = props => {
 	let defaultCompartment = { name: "", budget: 0 };
@@ -47,39 +45,35 @@ const CompartmentFormModal = props => {
 			<Header title="Compartment" onClickButton={props.onClose} />
 			<Body>
 				<form onSubmit={_submitHandler}>
-					<InputContainer>
-						<InputLabel htmlFor="name">Name</InputLabel>
-						<TextInput
-							type="text"
-							id="name"
-							name="name"
-							autoComplete="off"
-							value={compartment.name}
-							onChange={_changeInputHandler}
-						/>
-					</InputContainer>
+					<Input
+						element="text"
+						label="Name"
+						type="text"
+						id="name"
+						name="name"
+						autoComplete="off"
+						value={compartment.name}
+						onChange={_changeInputHandler}
+					/>
 
-					<InputContainer>
-						<InputLabel htmlFor="budget">Budget</InputLabel>
-						<TextInput
-							type={compartment._id ? "text" : "number"}
-							id="budget"
-							name="budget"
-							value={
-								compartment._id
-									? numeral(compartment.budget).format("0,0")
-									: compartment.budget
-							}
-							onChange={_changeInputHandler}
-							disabled={compartment._id ? true : false}
-						/>
-					</InputContainer>
+					<Input
+						element="text"
+						label="Budget"
+						type={compartment._id ? "text" : "number"}
+						id="budget"
+						name="budget"
+						value={
+							compartment._id
+								? numeral(compartment.budget).format("0,0")
+								: compartment.budget
+						}
+						onChange={_changeInputHandler}
+						disabled={compartment._id ? true : false}
+					/>
 
-					<InputContainer center>
-						<Button className typeStyle="success">
-							Regist
-						</Button>
-					</InputContainer>
+					<div style={{ textAlign: "center", marginTop: "15px" }}>
+						<Button typeStyle="success">Regist</Button>
+					</div>
 				</form>
 			</Body>
 		</Modal>

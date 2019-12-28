@@ -3,11 +3,9 @@ import React, { useState, useContext } from "react";
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
 import Body from "../../Modal/Body/Body";
-import InputContainer from "../../UI/InputContainer/InputContainer";
 
-import InputLabel from "../../UI/InputLabel/InputLabel";
-import TextInput from "../../UI/TextInput/TextInput";
 import Button from "../../UI/Button/Button";
+import Input from "../../UI/Input/Input";
 
 import WalletContext from "../../../contexts/WalletContext";
 
@@ -33,22 +31,21 @@ const WalletFormModal = props => {
 			<Header title="Wallet" onClickButton={props.onClose} />
 			<Body>
 				<form onSubmit={submitHandler}>
-					<InputContainer>
-						<InputLabel htmlFor="name">Name</InputLabel>
-						<TextInput
-							type="text"
-							id="name"
-							name="name"
-							autoComplete="off"
-							value={wallet.name}
-							onChange={changeInputHandler}
-							required
-						/>
-					</InputContainer>
+					<Input
+						element="text"
+						label="Name"
+						type="text"
+						id="name"
+						name="name"
+						autoComplete="off"
+						value={wallet.name}
+						onChange={changeInputHandler}
+						required
+					/>
 
-					<InputContainer center>
+					<div style={{ textAlign: "center", marginTop: "15px" }}>
 						<Button typeStyle="success">Regist</Button>
-					</InputContainer>
+					</div>
 				</form>
 			</Body>
 		</Modal>

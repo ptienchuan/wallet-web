@@ -1,3 +1,16 @@
+.Input {
+	margin-top: 15px;
+}
+
+.Input:first-child {
+	margin-top: 0px;
+}
+
+.Label {
+	display: block;
+	margin-bottom: 10px;
+}
+
 .TextInput {
 	padding: 10px;
 	width: 100%;
@@ -16,4 +29,15 @@
 
 .TextInput:disabled {
 	background-color: #373b51;
+}
+
+.Radio {
+	display: inline-block;
+	margin: 0px 10px;
+	cursor: pointer;
+}
+
+.Radio label {
+	margin-left: 5px;
+	cursor: pointer;
 }

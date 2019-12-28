@@ -1,5 +1,9 @@
-.budget {
+.Budget {
 	font-size: 35px;
 	margin-top: 0px;
 	color: #F2B703;
+}
+
+.center {
+	text-align: center;
 }

@@ -4,12 +4,10 @@ import numeral from "numeral";
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
 import Body from "../../Modal/Body/Body";
-import InputContainer from "../../UI/InputContainer/InputContainer";
 import CompartmentContext from "../../../contexts/CompartmentContext";
 
-import InputLabel from "../../UI/InputLabel/InputLabel";
-import TextInput from "../../UI/TextInput/TextInput";
 import Button from "../../UI/Button/Button";
+import Input from "../../UI/Input/Input";
 
 import classes from "./ChargingBudgetFormModal.module.css";
 
@@ -39,27 +37,29 @@ const ChargingBudgetFormModal = props => {
 			<Header title="Charge budget" onClickButton={props.onClose} />
 			<Body>
 				<form onSubmit={_submitHandler}>
-					<InputContainer center>
+					<div className={classes.center}>
 						<h3>{props.compartment.name}</h3>
-						<p className={classes.budget}>
+						<p className={classes.Budget}>
 							{numeral(displayNumber).format("0,0")}
 						</p>
-					</InputContainer>
+					</div>
 
-					<InputContainer>
-						<InputLabel forHtml="budget">Charging more</InputLabel>
-						<TextInput
-							type="number"
-							id="budget"
-							name="budget"
-							value={budget}
-							onChange={_inputChangeHandler}
-						/>
-					</InputContainer>
+					<Input
+						element="text"
+						label="Charging more"
+						type="number"
+						id="budget"
+						name="budget"
+						value={budget}
+						onChange={_inputChangeHandler}
+					/>
 
-					<InputContainer center>
+					<div
+						className={classes.center}
+						style={{ marginTop: "15px" }}
+					>
 						<Button typeStyle="success">Charge</Button>
-					</InputContainer>
+					</div>
 				</form>
 			</Body>
 		</Modal>
