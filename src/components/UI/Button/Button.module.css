@@ -7,16 +7,23 @@
 	outline: none;
 	cursor: pointer;
 }
-.Button:hover {
+
+.Button:hover:enabled {
 	background-color: #1E1E2F;
 	color: #d3d9ee;
+}
+
+.Button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
 
 .danger {
 	border: 1px solid #cb2431;
 	background-color: #8f0a14;
 }
-.danger:hover {
+
+.danger:hover:enabled {
 	background-color: #cb2431;
 	color: #d3d9ee;
 }
@@ -26,7 +33,8 @@
 	background-color: #0e8129;
 	color: #d3d9ee;
 }
-.success:hover {
+
+.success:hover:enabled {
 	background-color: #21983c;
 	color: #ebeffc;
 }

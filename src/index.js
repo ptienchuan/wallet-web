@@ -7,7 +7,7 @@ import axios from "axios";
 
 axios.defaults.baseURL = "http://localhost:4000";
 axios.defaults.headers.common["Authorization"] =
-	"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTAzMjMzNTBlYTgxNTIyZWNhZjRkZGYiLCJpYXQiOjE1Nzc1MTI1MjMsImV4cCI6MTU3NzU5ODkyM30.TO73CVMe6xDL5hS5h8QFknV58sLZBI5z_GjAe3_RrPI";
+	"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTAzMjMzNTBlYTgxNTIyZWNhZjRkZGYiLCJpYXQiOjE1Nzc4OTM3ODksImV4cCI6MTU3Nzk4MDE4OX0.sgkgwy72O1Ic_fqwIQdcJr_VADSvAlzbHYTJE1XJgs0";
 
 ReactDOM.render(<App />, document.getElementById("root"));
 

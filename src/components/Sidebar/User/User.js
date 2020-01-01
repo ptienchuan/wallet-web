@@ -12,7 +12,7 @@ const user = props => {
 				<p>{props.user.email}</p>
 				<div className={classes.buttons}>
 					<Button>Change</Button>
-					<Button typeStyle="danger">Logout</Button>
+					<Button color="danger">Logout</Button>
 				</div>
 			</div>
 		</div>

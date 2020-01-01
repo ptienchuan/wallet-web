@@ -8,7 +8,7 @@
 
 .Label {
 	display: block;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 }
 
 .TextInput {
@@ -40,4 +40,19 @@
 .Radio label {
 	margin-left: 5px;
 	cursor: pointer;
+}
+
+.Error {
+	border-color: #c2101d;
+}
+
+.Error:focus,
+.Error:hover {
+	border-color: red;
+}
+
+.ErrorMessage {
+	font-size: 14px;
+	color: #FD4747;
+	margin-bottom: 7px;
 }

@@ -101,7 +101,7 @@ const MoneyFormModal = props => {
 					/>
 
 					<div style={{ textAlign: "center", marginTop: "15px" }}>
-						<Button typeStyle="success">Regist</Button>
+						<Button color="success">Regist</Button>
 					</div>
 				</form>
 			</Body>

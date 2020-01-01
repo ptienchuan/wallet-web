@@ -17,7 +17,7 @@ const Toolbar = props => {
 	return (
 		<div className={classes.Toolbar}>
 			{!showingForm ? null : <ConparmentFormModal onClose={closeForm} />}
-			<Button typeStyle="success" onClick={openForm}>
+			<Button color="success" onClick={openForm}>
 				Add compartment
 			</Button>
 		</div>
