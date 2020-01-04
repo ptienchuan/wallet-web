@@ -14,7 +14,10 @@ export const validPrice = (value, name = "") => {
 	return valid ? "" : messages.msgMustBeNumber([name]);
 };
 
-export const validNote = (value, name = "") => {};
+export const validNote = (value, name = "") => {
+	const valid = validator.isLength(value.toString().trim(), { max: 150 });
+	return valid ? "" : messages.msgStringMaxLength([name, 150]);
+};
 
 const myValidator = { validName, validPrice, validNote };
 

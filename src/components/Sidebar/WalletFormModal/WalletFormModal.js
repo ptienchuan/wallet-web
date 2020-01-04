@@ -30,7 +30,7 @@ const WalletFormModal = props => {
 
 	const _submitHandler = e => {
 		e.preventDefault();
-		if (wallet.name.trim() !== "") {
+		if (_validForm()) {
 			addWallet(wallet);
 			props.onClose();
 		}
