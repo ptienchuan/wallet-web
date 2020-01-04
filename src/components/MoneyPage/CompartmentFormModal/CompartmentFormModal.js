@@ -4,11 +4,10 @@ import numeral from "numeral";
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
 import Body from "../../Modal/Body/Body";
-
 import CompartmentContext from "../../../contexts/CompartmentContext";
-
 import Button from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
+import validator from "../../../validator";
 
 const CompartmentFormModal = props => {
 	let defaultCompartment = { name: "", budget: 0 };
@@ -16,19 +15,52 @@ const CompartmentFormModal = props => {
 		defaultCompartment = { ...props.compartment };
 	}
 	const [compartment, _setCompartment] = useState(defaultCompartment);
-	const _changeInputHandler = e => {
-		const newCompartment = { ...compartment };
-		newCompartment[e.target.name] = e.target.value;
-		_setCompartment(newCompartment);
+	const [errors, _setErrors] = useState({
+		name: "",
+		budget: ""
+	});
+
+	const rules = {
+		name: validator.validName,
+		budget: validator.validPrice
 	};
 
 	const { addCompartment, changeCompartment } = useContext(
 		CompartmentContext
 	);
 
+	const _changeInputHandler = e => {
+		const newCompartment = { ...compartment };
+		const { name, value } = e.target;
+		const label = e.target.getAttribute("label");
+
+		// update state
+		newCompartment[name] = value;
+		_setCompartment(newCompartment);
+
+		// validation
+		const rule = rules[name];
+		_setErrors(prevErrors => {
+			let newErrors = { ...prevErrors };
+			newErrors[name] = rule(value, label);
+			return newErrors;
+		});
+	};
+
+	const _formValid = () => {
+		const checkFields = Object.keys(rules);
+		const errorList = [];
+		for (const field of checkFields) {
+			const rule = rules[field];
+			const val = compartment[field];
+			errorList.push(rule(val));
+		}
+		return errorList.every(err => err === "");
+	};
+
 	const _submitHandler = async e => {
 		e.preventDefault();
-		if (compartment.name.trim() !== "" && compartment.budget >= 0) {
+		if (_formValid()) {
 			if (compartment._id) {
 				await changeCompartment(props.compartment._id, {
 					name: compartment.name
@@ -54,12 +86,13 @@ const CompartmentFormModal = props => {
 						autoComplete="off"
 						value={compartment.name}
 						onChange={_changeInputHandler}
+						error={errors.name}
 					/>
 
 					<Input
 						element="text"
 						label="Budget"
-						type={compartment._id ? "text" : "number"}
+						type="text"
 						id="budget"
 						name="budget"
 						value={
@@ -69,10 +102,16 @@ const CompartmentFormModal = props => {
 						}
 						onChange={_changeInputHandler}
 						disabled={compartment._id ? true : false}
+						error={compartment._id ? "" : errors.budget}
 					/>
 
 					<div style={{ textAlign: "center", marginTop: "15px" }}>
-						<Button color="success">Regist</Button>
+						<Button
+							color="success"
+							disabled={_formValid() ? "" : "disabled"}
+						>
+							Regist
+						</Button>
 					</div>
 				</form>
 			</Body>

@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import numeral from "numeral";
-import { isInt } from "validator";
 
 import Modal from "../../Modal/Modal";
 import Header from "../../Modal/Header/Header";
@@ -8,17 +7,16 @@ import Body from "../../Modal/Body/Body";
 import CompartmentContext from "../../../contexts/CompartmentContext";
 import Button from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
-import { msgMustBeNumber } from "../../../constants/messages";
+import { validPrice } from "../../../validator";
 
 import classes from "./ChargingBudgetFormModal.module.css";
 
 const ChargingBudgetFormModal = props => {
 	const [budget, _setBudget] = useState(0);
-	let validBudget = isInt(budget.toString(), { min: 0 });
-	let budgetError = validBudget ? "" : msgMustBeNumber(["Charging more"]);
+	const budgetError = validPrice(budget, "Charging more");
 
 	let displayNumber = parseInt(props.compartment.budget);
-	if (validBudget) {
+	if (!budgetError) {
 		displayNumber += parseInt(budget);
 	}
 
@@ -30,7 +28,7 @@ const ChargingBudgetFormModal = props => {
 
 	const _submitHandler = async e => {
 		e.preventDefault();
-		if (validBudget) {
+		if (!budgetError) {
 			if (budget > 0) {
 				await chargeBudget(props.compartment._id, budget);
 			}
@@ -66,7 +64,7 @@ const ChargingBudgetFormModal = props => {
 					>
 						<Button
 							color="success"
-							disabled={validBudget ? "" : "disabled"}
+							disabled={!budgetError ? "" : "disabled"}
 						>
 							Charge
 						</Button>
