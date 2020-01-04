@@ -1,9 +1,7 @@
 import React, { useState, useContext } from "react";
 import numeral from "numeral";
 
-import Modal from "../../Modal/Modal";
-import Header from "../../Modal/Header/Header";
-import Body from "../../Modal/Body/Body";
+import Modal, { Header, Body } from "../../Modal";
 import CompartmentContext from "../../../contexts/CompartmentContext";
 import Button from "../../UI/Button/Button";
 import Input from "../../UI/Input/Input";
